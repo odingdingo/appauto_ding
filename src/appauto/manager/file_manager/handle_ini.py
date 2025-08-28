@@ -11,7 +11,7 @@ class HandleIni(object):
         # 禁用插值功能，避免 % 字符导致的问题
         self.config = configparser.ConfigParser(interpolation=None)
         if file_path and file_path.exists():
-            self.config.read(file_path)
+            self.config.read(file_path, encoding='utf-8')
 
     def add_section(self, section: str, options: Dict[str, Any]) -> None:
         """添加配置节"""
